@@ -1,73 +1,77 @@
-# React + TypeScript + Vite
+# ConSysME
+Control Systems Modelling Environment (ConSysME) is a professional, desktop-style GUI for visualizing, modeling, simulating, and analyzing control systems with block diagrams.  
+This repository contains:
+- A **technical GUI workspace** served at `/app`
+- A **professional landing page** served at `/`
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Tech Stack
+- React + TypeScript
+- Vite
+- Tailwind CSS
+- React Flow (canvas placeholder)
+- Zustand (UI state placeholders)
+- React Router (landing vs app routes)
+- IBM Carbon Icons
 
-Currently, two official plugins are available:
+## Design System
+Fonts (strict):
+- IBM Plex Sans (UI)
+- JetBrains Mono (code)
+- Latin Modern Math (math)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Color palette and component styling follow the provided ConSysME design system in the project brief.
 
-## React Compiler
+## Routes
+- `/` → Landing page
+- `/app` → GUI workspace
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Getting Started
+Install dependencies:
+```bash
+pnpm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Run the dev server:
+```bash
+pnpm dev
 ```
+
+Build for production:
+```bash
+pnpm build
+```
+
+Preview the production build:
+```bash
+pnpm preview
+```
+
+## Project Structure
+Key folders:
+- `src/App.tsx` — GUI workspace root
+- `src/pages/LandingPage.tsx` — Landing page
+- `src/components/` — Modular UI components
+- `src/state/uiStore.ts` — Zustand UI store
+- `src/index.css` — Tailwind + global styles
+
+## UI Behavior
+- **Ribbon + Toolbar**: Tabbed toolbar with tab-specific mock actions.
+- **Left Toolbox**: Collapsible block library panel.
+- **Right Inspector**: Contextual inspector panel.
+- **Canvas**: React Flow placeholder with zoom/pan controls.
+- **Bottom Panel**: Collapsible logs/plots/output panel.
+- **Theme Toggle**: Available in the **View** tab (toggles light/dark mode).
+
+## Notes
+- No backend is included.
+- React Flow logic is intentionally minimal; only layout and zoom/pan interactions are wired.
+- Fonts are assumed available/bundled in the environment (no font loader included).
+
+## Contributing
+Keep changes aligned with the ConSysME design system:
+- Use IBM Carbon Icons only
+- Maintain the defined palette and typography
+- Avoid marketing-style UI in the workspace
+
+## License
+TBD
