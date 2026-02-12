@@ -34,7 +34,7 @@ function LandingPage() {
           </nav>
           <div className="flex items-center gap-3">
             <Link
-              to="/app"
+              to="/simulator"
               className="inline-flex items-center gap-2 border border-[#2563EB] px-4 py-2 text-sm text-[#2563EB] hover:border-[#1D4ED8] hover:text-[#1D4ED8] dark:border-[#38BDF8] dark:text-[#38BDF8]"
             >
               Get Started
@@ -67,7 +67,7 @@ function LandingPage() {
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
-                to="/app"
+                to="/simulator"
                 className="inline-flex items-center gap-2 border border-[#2563EB] bg-[#2563EB] px-4 py-2 text-sm text-white hover:bg-[#1D4ED8]"
               >
                 Launch Workspace
